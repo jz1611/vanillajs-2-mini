@@ -16,6 +16,7 @@ function addTodo(event) {
 document.querySelector("form").addEventListener("submit", addTodo);
 
 function removeTodo(event) {
+    event.stopPropagation();
     event.target.parentNode.remove();
 }
 

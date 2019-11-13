@@ -23,8 +23,15 @@ function completeTodo(event) {
     const ariaChecked = event.target.getAttribute("aria-checked");
 
     if (ariaChecked !== "true") {
+        document.getElementById("completed-message").style.visibility = 'visible';
+        
+        setTimeout(function(){
+            document.getElementById("completed-message").style.visibility = 'hidden';            
+        }, 2000);
+
         event.target.setAttribute("aria-checked", "true");
     } else {
         event.target.setAttribute("aria-checked", "false");
     }
 }
+
